@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta charset="UTF-8">
+	<title>UI5 custom icon font</title>
+	<style type="text/css">
+		@font-face {
+			font-family: 'icomoon';
+			src:url('icomoon.eot?5qvb9g');
+			src:url('icomoon.eot?5qvb9g#iefix') format('embedded-opentype'),
+				url('icomoon.ttf?5qvb9g') format('truetype'),
+				url('icomoon.woff?5qvb9g') format('woff'),
+				url('icomoon.svg?5qvb9g#icomoon') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+
+		[class^="icon-"], [class*=" icon-"] {
+			font-family: 'icomoon';
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+
+			/* Better Font Rendering =========== */
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+
+		.icon-microwave:before {
+			content: "\e900";
+		}
+		.icon-oven:before {
+			content: "\e901";
+		}
+		.icon-refridgerator:before {
+			content: "\e902";
+		}
+
+		/* style for font icons */
+		.iconstyle {
+   			color: red;
+   			font-size: 60px;
+		}
+	</style>
+	<script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js" type="text/javascript"
+		id="sap-ui-bootstrap"
+		data-sap-ui-theme="sap_bluecrystal"
+		data-sap-ui-libs="sap.m, sap.ui.commons">
+	</script>
+	<script type="text/javascript">
+		sap.ui.getCore().attachInit(function () {
+			// load custom fonts
+			jQuery.sap.require('sap.ui.core.IconPool');
+        	sap.ui.core.IconPool.addIcon('microwave', 'customfont', 'icomoon', 'e900');
+        	sap.ui.core.IconPool.addIcon('oven', 'customfont', 'icomoon', 'e901');
+        	sap.ui.core.IconPool.addIcon('refridgerator', 'customfont', 'icomoon', 'e902');
+			// create a mobile app and display page1 initially
+			var app = new sap.m.App("myApp", {
+				initialPage: "page1"
+			});
+			var colorPicker = new sap.ui.commons.ColorPicker()
+			//Attach eventhandler for change event
+			colorPicker.attachChange(function(oEvent){
+				var colors = oEvent.getParameters();
+				$(".iconstyle").css("color", colors.hex);
+			});
+			var slider = new sap.m.Slider({
+				value: 60,
+				min: 20,
+				max: 200
+			});
+			slider.attachLiveChange(function(oEvent){
+				var value = oEvent.getParameter("value");
+				$(".iconstyle").css("font-size", value+"px");
+			})
+			// create the first page
+			var page1 = new sap.m.Page("page1", {
+				title : "SAPUI5 Custom Icon Font",
+				content : [
+					slider,
+					colorPicker,
+					new sap.ui.core.Icon({
+                        src : "sap-icon://dishwasher"
+                    }).addStyleClass("iconstyle"),
+                    new sap.ui.core.Icon({
+                        src : "sap-icon://customfont/microwave"
+                    }).addStyleClass("iconstyle"),
+                    new sap.ui.core.Icon({
+                        src : "sap-icon://customfont/oven"
+                    }).addStyleClass("iconstyle"),
+                    new sap.ui.core.Icon({
+                        src : "sap-icon://customfont/refridgerator"
+                    }).addStyleClass("iconstyle")
+				]
+			});
+			// add both pages to the app
+			app.addPage(page1);
+			// place the app into the HTML document
+			app.placeAt("content");
+		});
+	</script>
+</head>
+<body class="sapUiBody" id="content">
+</body>
+</html>
