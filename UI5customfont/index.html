@@ -62,6 +62,10 @@
 			var app = new sap.m.App("myApp", {
 				initialPage: "page1"
 			});
+			var blogLink = new sap.m.Link({
+				text: "See blog post for more info",
+				href: "http://scn.sap.com/community/developer-center/front-end/blog/2015/11/02/enhance-ui5-app-with-custom-icon-fonts"
+			});
 			var colorPicker = new sap.ui.commons.ColorPicker()
 			//Attach eventhandler for change event
 			colorPicker.attachChange(function(oEvent){
@@ -81,6 +85,7 @@
 			var page1 = new sap.m.Page("page1", {
 				title : "SAPUI5 Custom Icon Font",
 				content : [
+					blogLink,
 					slider,
 					colorPicker,
 					new sap.ui.core.Icon({
