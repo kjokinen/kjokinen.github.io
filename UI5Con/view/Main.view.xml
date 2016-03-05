@@ -1,0 +1,94 @@
+<mvc:View controllerName="ui5con.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<App id="app" height="100%">
+		<pages>
+			<Page id="page" title="{i18n>title}">
+				<content>
+					<l:VerticalLayout class="sapUiLargeMargin" id="contentCnt">
+						<VBox id="helloContent" visible="false">
+							<Text text="{i18n>hellofrankfurt}" />
+							<Image
+								class="sapUiSmallMarginEnd"
+								src="{i18n>welcomelogo}">
+							</Image>
+						</VBox>
+					</l:VerticalLayout>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button icon="{i18n>nexticon}" press="navNext" />
+					</Toolbar>
+				</footer>
+			</Page>
+			<Page id="page2" title="{i18n>title}" showNavButton="true" navButtonPress="navBack">
+				<content>
+					<l:VerticalLayout class="sapUiLargeMargin">
+						<Label text="{i18n>myselflabel}" />
+						<Text text="{i18n>myself}" />
+						<Image
+							class="sapUiSmallMarginEnd"
+							src="{i18n>myselfimage}"
+							width="200px">
+						</Image>
+					</l:VerticalLayout>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button icon="{i18n>nexticon}" press="navNext" />
+					</Toolbar>
+				</footer>
+			</Page>
+			<Page id="page3" title="{i18n>title}" showNavButton="true" navButtonPress="navBack">
+				<content>
+					<l:VerticalLayout class="sapUiLargeMargin">
+						<Label text="{i18n>hmtl5speechrecognitiontitle}" />
+						<Link text="{i18n>hmtl5speechrecognitionname}" href="{i18n>hmtl5speechrecognitionurl}" target="_blank" />
+						<Text text="{i18n>hmtl5speechrecognitionsupportedbrowsers}" />
+						<Text text="{i18n>hmtl5speechrecognitiolibs}" />
+						<Text text="{i18n>hmtl5speechrecognitionoptions}" />
+					</l:VerticalLayout>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button icon="{i18n>nexticon}" press="navNext" />
+					</Toolbar>
+				</footer>
+			</Page>
+			<Page id="page4" title="{i18n>title}" showNavButton="true" navButtonPress="navBack">
+				<content>
+					<l:VerticalLayout class="sapUiLargeMargin">
+						<Label text="{i18n>videoexample}" />
+						<html:video id="video" width='50%' height='50%'>
+							<html:source src='images/voicesearch2.mp4' type='video/mp4' />
+						</html:video>
+						<HBox>
+							<Button icon="{i18n>playicon}" press="playPressed" />
+							<Button icon="{i18n>stopicon}" press="stopPressed" />
+						</HBox>
+					</l:VerticalLayout>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button icon="{i18n>nexticon}" press="navNext" />
+					</Toolbar>
+				</footer>
+			</Page>
+			<Page id="pageLast" title="{i18n>title}" showNavButton="true" navButtonPress="navBack">
+				<content>
+					<l:VerticalLayout class="sapUiLargeMargin">
+						<Label text="{i18n>questions}" />
+					</l:VerticalLayout>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button icon="{i18n>nexticon}" press="navNext" />
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
