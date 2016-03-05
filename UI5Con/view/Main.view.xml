@@ -8,7 +8,8 @@
 							<Text text="{i18n>hellofrankfurt}" />
 							<Image
 								class="sapUiSmallMarginEnd"
-								src="{i18n>welcomelogo}">
+								src="{i18n>welcomelogo}"
+								width="100%">
 							</Image>
 						</VBox>
 					</l:VerticalLayout>

@@ -87,6 +87,9 @@ sap.ui.define([
 				case view.createId("page3"):
 					this.navToPage(view.createId("page4"));
 					break;
+				case view.createId("page4"):
+					this.navToPage(view.createId("pageLast"));
+					break;
 			}
 		},
 
