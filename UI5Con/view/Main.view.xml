@@ -77,6 +77,34 @@
 					</Toolbar>
 				</footer>
 			</Page>
+			<Page id="page5" title="{i18n>annyangvoiceinstructions}" showNavButton="true" navButtonPress="navBack">
+				<content>
+					<l:VerticalLayout class="sapUiLargeMargin">
+						<Label text="{i18n>annyanglabel}" />
+						<Text text="{i18n>annyangdesc}" />
+						<Image
+							id="annyangLibImg"
+							class="sapUiSmallMarginEnd"
+							src="{i18n>annyanglib}" />
+						<Image
+							id="annyangExampleImg"
+							class="sapUiSmallMarginEnd"
+							src="{i18n>annyangexampleimage}"
+							/>
+						<Image
+							id="annyangSplatImg"
+							class="sapUiSmallMarginEnd"
+							src="{i18n>annyangsplat}"
+							/>
+					</l:VerticalLayout>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button icon="{i18n>nexticon}" press="navNext" />
+					</Toolbar>
+				</footer>
+			</Page>
 			<Page id="pageLast" title="{i18n>title}" showNavButton="true" navButtonPress="navBack">
 				<content>
 					<l:VerticalLayout class="sapUiLargeMargin">

@@ -42,6 +42,21 @@ sap.ui.define([
 						this.stopVideo();
 					}
 					break;
+				case "script":
+					if(currentPageId === view.createId("page5")){
+						this.hightlightImage("annyangLibImg");
+					}
+					break;
+				case "example":
+					if(currentPageId === view.createId("page5")){
+						this.hightlightImage("annyangExampleImg");
+					}
+					break;
+				case "splat":
+					if(currentPageId === view.createId("page5")){
+						this.hightlightImage("annyangSplatImg");
+					}
+					break;
 			}
 		},
 
@@ -67,6 +82,17 @@ sap.ui.define([
 			view.byId("video").$()[0].pause();
 		},
 
+		hightlightImage: function(image){
+			var view = this.getView();
+			var page = view.byId("page5");
+			view.byId("annyangLibImg").removeStyleClass("imageHighlight");
+			view.byId("annyangExampleImg").removeStyleClass("imageHighlight");
+			view.byId("annyangSplatImg").removeStyleClass("imageHighlight");
+			var img = view.byId(image);
+			img.addStyleClass("imageHighlight");
+			page.scrollToElement(img);
+		},
+
 		navBack: function(){
 			var view = this.getView();
 			var app = view.byId("app");
@@ -88,6 +114,9 @@ sap.ui.define([
 					this.navToPage(view.createId("page4"));
 					break;
 				case view.createId("page4"):
+					this.navToPage(view.createId("page5"));
+					break;
+				case view.createId("page5"):
 					this.navToPage(view.createId("pageLast"));
 					break;
 			}

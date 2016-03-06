@@ -13,3 +13,7 @@
 	font-size: 1.5em;
 	padding-bottom: 1em;
 }
+
+.imageHighlight {
+	border: 10px solid red;
+}

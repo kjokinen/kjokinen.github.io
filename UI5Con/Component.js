@@ -58,6 +58,15 @@ sap.ui.define([
 					"Stop": function() {
 						jQuery.sap.log.info("Stop command received");
 						that.sendVoiceControlEvent("stop");
+					},
+					"Script": function() {
+						that.sendVoiceControlEvent("script");
+					},
+					"Example": function() {
+						that.sendVoiceControlEvent("example");
+					},
+					"Splat": function() {
+						that.sendVoiceControlEvent("splat");
 					}
 				};
 				// Add our commands to annyang
